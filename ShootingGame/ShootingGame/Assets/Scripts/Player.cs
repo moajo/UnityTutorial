@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public float speed=5;
+	protected Spaceship spaceship;
 
-	public GameObject bullet;
-	
-	// Update is called once per frame
+	//public float speed=5;
+	//public GameObject bullet;
+
 	void Update () 
 	{
 		// 右・左
@@ -20,16 +20,21 @@ public class Player : MonoBehaviour {
 
 
 		// 移動する向きとスピードを代入する
-		GetComponent<Rigidbody2D>().velocity = dir * speed;
+		//GetComponent<Rigidbody2D>().velocity = dir * speed;
+		spaceship.Move (dir);
 	}
 
 	IEnumerator Start ()
 	{
+		spaceship = GetComponent<Spaceship> ();
+
 		while (true) {
 			// 弾をプレイヤーと同じ位置/角度で作成
-			Instantiate (bullet, transform.position, transform.rotation);
+			//Instantiate (bullet, transform.position, transform.rotation);
+			spaceship.Shot(transform);
+
 			// 0.05秒待つ
-			yield return new WaitForSeconds (0.05f);
+			yield return new WaitForSeconds (spaceship.shotDelay);
 		}
 	}
 }

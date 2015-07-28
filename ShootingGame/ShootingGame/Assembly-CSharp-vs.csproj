@@ -47,7 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Spaceship.cs" />
+     <Compile Include="Assets\Scripts\TestScript\Enemy_Test.cs" />
+     <Compile Include="Assets\Scripts\TestScript\Player_Test.cs" />
+     <Compile Include="Assets\Scripts\TestScript\Spaceship_Test.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>Z:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

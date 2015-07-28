@@ -5,10 +5,7 @@ public class Player : MonoBehaviour {
 
 	public float speed=5;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+	public GameObject bullet;
 	
 	// Update is called once per frame
 	void Update () 
@@ -24,5 +21,15 @@ public class Player : MonoBehaviour {
 
 		// 移動する向きとスピードを代入する
 		GetComponent<Rigidbody2D>().velocity = dir * speed;
+	}
+
+	IEnumerator Start ()
+	{
+		while (true) {
+			// 弾をプレイヤーと同じ位置/角度で作成
+			Instantiate (bullet, transform.position, transform.rotation);
+			// 0.05秒待つ
+			yield return new WaitForSeconds (0.05f);
+		}
 	}
 }

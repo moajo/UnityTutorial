@@ -37,4 +37,17 @@ public class Player : MonoBehaviour {
 			yield return new WaitForSeconds (spaceship.shotDelay);
 		}
 	}
+
+	void OnTriggerEnter2D (Collider2D c)
+	{
+		// 弾の削除
+		Destroy(c.gameObject);
+		
+		// 爆発する
+		spaceship.Explosion();
+		
+		// プレイヤーを削除
+		Destroy (gameObject);
+	}
+
 }

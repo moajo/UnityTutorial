@@ -58,7 +58,7 @@ GameObject:
   - 50: {fileID: 5016504}
   - 114: {fileID: 11469160}
   - 114: {fileID: 11469452}
-  - 114: {fileID: 11460876}
+  - 60: {fileID: 6034720}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62169898, y: .508525074, z: 0}
+  m_LocalPosition: {x: 4.81655073, y: 1.74964499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404408}
@@ -133,6 +133,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &6034720
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179832}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .0828418732, y: .310140133}
+      - {x: -.200613976, y: .322841883}
+      - {x: -.238714695, y: .301171064}
+      - {x: -.24955225, y: -.170781016}
+      - {x: -.165684223, y: -.271420956}
+      - {x: .134596348, y: -.265069962}
+      - {x: .25459671, y: -.167298436}
+      - {x: .210140228, y: .298719168}
+      - {x: .219999999, y: .360000014}
 --- !u!95 &9549122
 Animator:
   serializedVersion: 3
@@ -150,22 +172,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11460876
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 179832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b05be419a2987149b1b0699cfa17309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  shotDelay: 0
-  bullet: {fileID: 0}
-  shotPositionList: []
-  canShot: 1
 --- !u!114 &11469160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +198,7 @@ MonoBehaviour:
   shotDelay: .300000012
   bullet: {fileID: 117450, guid: ea2bb6ca507e31c4a8665ed8c53836cc, type: 2}
   canShot: 1
+  explosion: {fileID: 0}
 --- !u!212 &21232698
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,6 +14,13 @@ public class Spaceship : MonoBehaviour {
 
 	public bool canShot;
 
+	public GameObject explosion;
+
+	public void Explosion()
+	{
+		Instantiate (explosion, transform.position, transform.rotation);
+	}
+
 	// 弾の作成
 	public void Shot (Transform origin)
 	{

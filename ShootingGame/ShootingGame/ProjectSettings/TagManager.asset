@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - P_Bullet
+  - E_Bullet
+  - DestroyArea
   - 
   - 
   - 

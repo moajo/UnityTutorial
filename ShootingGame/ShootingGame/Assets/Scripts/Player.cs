@@ -40,14 +40,27 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D c)
 	{
-		// 弾の削除
-		Destroy(c.gameObject);
-		
-		// 爆発する
-		spaceship.Explosion();
-		
-		// プレイヤーを削除
-		Destroy (gameObject);
+		string layer = LayerMask.LayerToName (c.gameObject.layer);
+
+		if (layer == "E_Bullet") 
+		{
+			// 弾の削除
+			Destroy(c.gameObject);
+			
+			// 爆発する
+			spaceship.Explosion();
+			
+			// プレイヤーを削除
+			Destroy (gameObject);
+		}
+		if (layer == "Enemy") 
+		{
+			// 爆発する
+			spaceship.Explosion();
+			
+			// プレイヤーを削除
+			Destroy (gameObject);
+		}
 	}
 
 }

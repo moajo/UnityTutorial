@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 463984}
   - 212: {fileID: 21250368}
   - 60: {fileID: 6008742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 436266}
   - 50: {fileID: 5040140}
   - 114: {fileID: 11440308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 431278}
   - 212: {fileID: 21280836}
   - 60: {fileID: 6077226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,6 +225,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

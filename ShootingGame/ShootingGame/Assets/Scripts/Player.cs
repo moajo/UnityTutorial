@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
 			// 弾をプレイヤーと同じ位置/角度で作成
 			//Instantiate (bullet, transform.position, transform.rotation);
 			spaceship.Shot(transform);
+			GetComponent<AudioSource>().Play();
 
 			// 0.05秒待つ
 			yield return new WaitForSeconds (spaceship.shotDelay);

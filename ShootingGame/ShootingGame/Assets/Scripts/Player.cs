@@ -46,6 +46,9 @@ public class Player : MonoBehaviour {
 		{
 			// 弾の削除
 			Destroy(c.gameObject);
+
+			// Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+			FindObjectOfType<Manager>().GameOver();
 			
 			// 爆発する
 			spaceship.Explosion();
@@ -55,6 +58,9 @@ public class Player : MonoBehaviour {
 		}
 		if (layer == "Enemy") 
 		{
+			// Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+			FindObjectOfType<Manager>().GameOver();
+
 			// 爆発する
 			spaceship.Explosion();
 			

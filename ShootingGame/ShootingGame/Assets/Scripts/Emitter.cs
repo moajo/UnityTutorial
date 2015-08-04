@@ -8,6 +8,8 @@ public class Emitter : MonoBehaviour {
 	
 	// 現在のWave
 	private int currentWaveIndex;
+	// Managerコンポーネント
+	private Manager manager;
 
 	IEnumerator Start ()
 	{
@@ -16,8 +18,15 @@ public class Emitter : MonoBehaviour {
 		if (wavelist.Length == 0) {
 			yield break;
 		}
+		// Managerコンポーネントをシーン内から探して取得する
+		manager = FindObjectOfType<Manager> ();
+
 		
 		while (true) {
+			// タイトル表示中は待機
+			while(!manager.IsPlaying) {
+				yield return new WaitForEndOfFrame ();
+			}
 			
 			// Waveを作成する
 			GameObject wave = (GameObject)Instantiate (wavelist [currentWaveIndex], transform.position, Quaternion.identity);

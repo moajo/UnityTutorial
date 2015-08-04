@@ -199,6 +199,7 @@ MonoBehaviour:
   bullet: {fileID: 117450, guid: ea2bb6ca507e31c4a8665ed8c53836cc, type: 2}
   canShot: 1
   explosion: {fileID: 100756, guid: a6562ef00bd118c419316effaa0af7f7, type: 2}
+  IsPlayer: 0
 --- !u!212 &21232698
 SpriteRenderer:
   m_ObjectHideFlags: 1

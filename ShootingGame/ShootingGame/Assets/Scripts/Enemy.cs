@@ -4,6 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
 	Spaceship spaceship;
+	public int hp=1;
 
 	// Use this for initialization
 	IEnumerator Start () 
@@ -44,13 +45,21 @@ public class Enemy : MonoBehaviour {
 
 		if( layerName != "P_Bullet") return;
 		
+		// Bulletコンポーネントを取得
+		Bullet bullet =  c.transform.parent.GetComponent<Bullet>();
+		hp -= bullet.power;
+
 		// 弾の削除
 		Destroy(c.gameObject);
+
+		if (hp <= 0) {
+			// 爆発
+			spaceship.Explosion ();
 		
-		// 爆発
-		spaceship.Explosion();
-		
-		// エネミーの削除
-		Destroy(gameObject);
+			// エネミーの削除
+			Destroy (gameObject);
+		} else {
+			spaceship.GetAnimator().SetTrigger("Damage");
+		}
 	}
 }

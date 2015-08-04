@@ -16,8 +16,17 @@ public class Spaceship : MonoBehaviour {
 
 	public GameObject explosion;
 
+	// アニメーターコンポーネント
+	private Animator animator;
+
 	//画面外移動を制限するかどうか
 	public bool IsPlayer=false;
+
+	void Start ()
+	{
+		// アニメーターコンポーネントを取得
+		animator = GetComponent<Animator> ();
+	}
 
 	public void Explosion()
 	{
@@ -58,5 +67,10 @@ public class Spaceship : MonoBehaviour {
 		{
 			GetComponent<Rigidbody2D> ().velocity = direction * speed;
 		}
+	}
+	// アニメーターコンポーネントの取得
+	public Animator GetAnimator()
+	{
+		return animator;
 	}
 }

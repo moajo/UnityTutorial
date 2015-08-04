@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour {
 
 	Spaceship spaceship;
 	public int hp=1;
+	public int point=100;
 
 	// Use this for initialization
 	IEnumerator Start () 
@@ -53,6 +54,8 @@ public class Enemy : MonoBehaviour {
 		Destroy(c.gameObject);
 
 		if (hp <= 0) {
+			// スコアコンポーネントを取得してポイントを追加
+			FindObjectOfType<Score>().AddPoint(point);
 			// 爆発
 			spaceship.Explosion ();
 		
